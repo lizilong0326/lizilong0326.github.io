@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Yaro
+    </title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body ng-app="myApp">
+    <div class="wrap hide bodyhide">
+        <div class="head">
+            <ul>
+                <li ui-sref="home" ui-sref-active="libg"><a href="##">Home</a></li>
+                <li ui-sref="work" ui-sref-active="libg"><a href="##">WORK</a></li>
+                <li ui-sref="home">
+                    <div class="logoArea">
+                        <h2><span>VINCENT</span>
+                              <div class="bg"></div>
+                        </h2>
+                    </div>
+                </li>
+                <li ui-sref="about" ui-sref-active="libg"><a href="##">ABOUT</a></li>
+                <li ui-sref="contenct" ui-sref-active="libg"><a href="##">CONTENCT</a></li>
+            </ul>
+        </div>
+        <div ui-view class="maxbody" ></div>
+    </div>
+    <div class="loding">
+        <img src="imgs/loding.gif" alt="" />
+    </div>
+   <!--<div class="addbox">
+    <span class="remove"></span>
+</div>-->
+    <!--<div class="addimgs">
+    <img class="addimg" src="./imgs/11.jpeg" alt="">
+</div>-->
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/js.js"></script>
+</body>
+
+</html>
