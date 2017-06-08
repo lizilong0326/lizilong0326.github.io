@@ -53,8 +53,7 @@ app.controller('findCtrl', function ($scope) {
         var stt = '<div class="addbox"><span class="remove"></span></div>';
         $("body").append(stt);
         var str = '<div class="addimgs"><img class = "addimg" src = "../imgs/' + name + '" alt = "" ></div>';
-        $("body").append(str);hn
-
+        $("body").append(str);
         $(".addbox").height(h)
         $(".remove").on("click", function () {
             $(".addbox").remove();
