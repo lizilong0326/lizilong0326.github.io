@@ -477,9 +477,9 @@ a:hover {
   z-index: 99999999; }
 
 .addimgs {
-  width: 70%;
+  width: 52%;
   position: absolute;
-  left: 15%;
+  left: 24%;
   top: 100px;
   z-index: 999999999; }
   .addimgs img {
