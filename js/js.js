@@ -52,7 +52,7 @@ app.controller('findCtrl', function ($scope) {
     	 document.documentElement.scrollTop = document.body.scrollTop =0;
         var stt = '<div class="addbox"><span class="remove"></span></div>';
         $("body").append(stt);
-        var str = '<div class="addimgs"><img class = "addimg" src = "../imgs/' + name + '" alt = "" ></div>';
+        var str = '<div class="addimgs"><img class = "addimg" src = "' + name + '" alt = "" ></div>';
         $("body").append(str);
         $(".addbox").height(h)
         $(".remove").on("click", function () {

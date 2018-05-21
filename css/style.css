@@ -501,7 +501,7 @@ a:hover {
   width: 100%;
   height: 860px;
   position: relative;
-  margin-top: 30px; }
+  margin-top: 65px; }
   .ad_foot .shu {
     position: absolute;
     left: 0;
@@ -635,6 +635,38 @@ a:hover {
           width: 100%;
           font-size: 14px; }
     .ad_foot .three .p_text {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666666; }
+.ad_foot .five {
+    width: 40%;
+    position: absolute;
+    left: 5%;
+    top: -53px; }
+    .ad_foot .five dl {
+      width: 100%;
+      height: 78px; }
+      .ad_foot .five dl dt {
+        width: 78px;
+        height: 78px;
+        float: right; }
+        .ad_foot .five dl dt img {
+          width: 100%; }
+      .ad_foot .five dl dd {
+        height: 78px;
+        display: inline-block;
+        text-align: right;
+        font-weight: bold;
+        position: relative;
+        width: 325px; }
+        .ad_foot .five dl dd p:nth-child(1) {
+          font-size: 22px; }
+        .ad_foot .five dl dd p:nth-child(2) {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          font-size: 14px; }
+    .ad_foot .five .p_text {
       margin-top: 20px;
       font-size: 14px;
       color: #666666; }
