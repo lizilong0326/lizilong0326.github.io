@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Yaro</title>
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="icon" href="image/touxiang.png" >
+	<style>
+		@font-face {
+			font-family: hone;
+			src: url(font/AvenirLTStd-Black.otf);
+		}
+
+		@font-face {
+			font-family: htwo;
+			src: url(font/AvenirNextLTPro-Regular.otf);
+		}
+	body{
+		font-family:htwo !important;
+		/*font-family:hone !important;*/
+	}
+	.flex-border{
+		position: fixed;width: calc(100 - 10px);height: calc(100%);border: solid 5px rgba(232,244,9,1);top: 0;left: 0;right: 0;z-index: -1;
+	}
+	.flex-bottom-border{position: fixed;width: calc(100 - 10px);height: 5px;background: rgba(232,244,9,1);bottom: 0;left: 0;right: 0;z-index: 3;}
+	.reveal-modal-bg { position: fixed; height: 100%; width: 100%; z-index: 1000; display: none; top: 0; left: 0; background:rgba(00, 00, 00, 0.6) }
+			.reveal-modal { visibility: hidden;top: 20px !important; left: 50%; margin-left: -550px; width: 1000px; position: fixed; z-index: 1001;  -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;background-color: #FFF; height: calc(100vh - 40px);overflow: auto;	background#FFF;	}
+				.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+				.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}	.reveal-modal.large 		{ width: 600px; margin-left: -340px;}	.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}		 .close-reveal-modal { font-size: 22px; line-height: 0.5; position: absolute; top: 8px; right: 11px; color: #333; text-shadow: 0 -1px 1px rbga(0,0,0,.6); font-weight: bold; cursor: pointer; 		}
+
+	.fiexBg{width: calc(100% - 64px);height: calc(100vh - 90px); background: url(image/bg.png) repeat-y center; background-size: cover;z-index: -2; margin: 0 auto;margin-top: 60px;background-attachment: fixed;overflow: hidden;}
+	.navBox{width: 100%;height: 60px;box-sizing:border-box;background: #fff;border: solid 5px rgba(232,244,9,1);border-bottom: none;text-align: center;}
+	.fixedNav{position: fixed;top: 0px;z-index: 999;padding: 0 29px;box-sizing: border-box;}
+
+	.logo{float: left;padding-top: 8px;}
+	.navList{text-align: center;position: relative;}
+	.navList::after{width: 120px;height: 31px;content: "";background: url(image/yarou_zhang.png) no-repeat;background-size: 100% 100%;position: absolute;left: 0px;top:14px;}
+	.navList li{display: inline-block;font-size:16px;font-family:PingFang-SC-Medium,PingFang-SC;font-weight:500;color:rgba(17,17,17,1); line-height: 60px;padding: 0 20px;}
+	.navList li.active{}
+	.me{width: 1296px;margin: 0px auto;padding-top: 64px;padding-bottom: 111px;font-family:htwo !important;}
+	.me h2{	width: 100%;text-align: center;font-size:66px;font-family:PingFang-SC-Medium,PingFang-SC;font-weight:500;color:rgba(16,16,16,1);line-height:92px;padding-bottom: 5px;letter-spacing:3px;}
+	.me h3{width: 100%; text-align: center;font-size:14px;font-family:PingFang-SC-Medium,PingFang-SC;font-weight:500;color:rgba(16,16,16,1);line-height:20px;letter-spacing:4px;padding-bottom: 70px;}
+	.avator {float: left;width: 50%;}
+	.intro{width: calc(50% - 2px);float: left;box-sizing: border-box;}
+	.intro h1{font-size: 44px;color: #3E3F3F;text-align: center;position: relative;top: -15px;}
+	.meSkills{width: 100%;height: 684px;background: #F7F7F7;}
+
+	.boxTitle{padding: 0px 15px;font-size: 44px;color: #3E3F3F;text-align: center;position: relative;padding-top: 140px;    margin-bottom: 16px;font-family:htwo !important;}
+	.Title{padding: 0px 15px;font-size: 44px;color: #fff;text-align: center;position: relative;padding-top: 140px;    margin-bottom: 16px;}
+	.skillImg{display: block;margin: 0px auto;margin-top: 116px;width: 1230px;}
+
+	.article{width: 89px; text-align: center;font-size:14px;font-family:PingFang-SC-Medium,PingFang-SC;font-weight:500;color:rgba(16,16,16,1);line-height:20px;letter-spacing:4px; position: relative; margin: 0 auto;}
+	.article::before{content: "";position: absolute;width:83px;height:2px;background:rgba(232,244,9,1);left: 0; bottom: 0;}
+	.label{text-align: center;margin: 78px auto 70px;}
+	.label li{line-height: 44px;background: #EBEBEB;border-radius: 3px;display: inline-block;font-size: 22px;color: #757575;padding: 0px 15px;margin: 0px 10px;}
+	.worksList{width: 1300px;margin: 0px auto;font-size: 0px;margin-bottom: 107px; padding-top: 39px;}
+	.worksItem {width: 618px;height:485px;display: inline-block;position: relative;margin-top: 30px;cursor: pointer;overflow: hidden;}
+	.worksItem:nth-child(2n+0){margin-left: 60px;}
+	.ItemBox{transition: transform 0.25s ease;position: absolute;top:-100%; left: 0px; width: 100%;height: 100%;background: rgba(255,108,98,0.94);    padding: 20px;box-sizing: border-box;}
+	.ItemBox .ItemTitle{font-size: 26px;color: #FFFFFF;font-family:hone !important;}
+	.ItemBox .ItemArticle{font-size: 16px;color: #FFFFFF;    padding-top: 12px;  font-family: hone !important;  line-height: 23px;}
+	.activeBox{top:0px !important;}
+	.activeBox .wz{animation:List 1s;}
+	.activeBox .prev{animation:Left 1s;}
+
+    @keyframes List{
+    	from {transform: translate(0px, 60px);opacity: 0;}
+    	to {transform: translate(0px, 0px);opacity: 1;}
+    }
+
+    @keyframes Left{
+    	from {transform: translate(80px, 0px);opacity: 0;}
+    	to {transform: translate(0px, 0px);opacity: 1;}
+    }
+	.wz{    padding-top: 4px;}
+	.ItemBox .prev{position: absolute;bottom: 10px;right: 30px;}
+	.workDate{width: 100%;height: 900px;background: url(image/jlbj.png);}
+
+	.contect{width: 100%;}
+	.contectIntro{width: 724px;margin: 0px auto;font-size: 24px;color:#8B8B8B;text-align: center;margin-top: 80px;    line-height: 34px;}
+	.contectItems{margin-top: 70px;width: 1000px;margin: 0 auto;}
+	.contectItems-work{width: 100%;display: flex; margin-top: 65px;}
+	.contectItems-work img{width: 300px; height: 200px; margin-right: 40px;}
+	.contectItems-work .right{flex: 1;}
+	.contectItems-work .right .time{width: 141px;height: 14px;}
+	.contectItems-work .right .time img{width: 100%;height: 14px;}
+	#close{ width:40px; height: 40px;position: fixed; top: 0px;z-index: 999999;top: 20px;cursor: pointer;
+		right: calc((100% - 980px)/2); display: none;background: url(image/icon_close.png) no-repeat;background-size: 100% 100%;}
+		.loding{width: calc(100% - 10px);height: calc(100% - 10px);position: fixed;top: 0px;background: #fff;    z-index: 99999;display: flex;justify-content: center; align-items: center;border: solid 5px rgba(232,244,9,1);}
+	/*.scale{transform: scale(0.8);}*/
+	</style>
+</head>
+<body>
+
+	<div class="loding">
+		<img src="image/login.gif" alt=""/>
+	</div>
+	<div class="fiexBg" class="five">
+		<div></div>
+	</div>
+
+	<div class="navBox fixedNav transition03 autofix_sb">
+
+		<ul class="navList">
+			<li class="active">HOME</li>
+			<li>ABOUT</li>
+			<li>WORKS</li>
+			<li>EXPERIENCE</li>
+			<li>CONTECT</li>
+		</ul>
+	</div>
+
+	<div class="me scale one">
+		<h2>关于我</h2>
+		<p class="article" style="margin-bottom:70px;">@我的介绍</p>
+		<div class="avator"><img src="image/avator.png" alt=""></div>
+		<div class="intro">
+			<p>你好，<br> 我是 UI设计 | 张雅柔</p>
+			<p>从事互联网设计5年，擅长移动端、pc端、H5、后台设计并且熟悉产品设计流程。善于沟通，爱好撸猫</p>
+			<ul>
+				<li>利用互联网平台把握用户需求，总结想法，喜发现新的设计趋势</li>
+				<li>关注用户体验，做事积极有热情，注重团队合作，富有责任感</li>
+				<li>熟练使用Sketch、PS、AI、AE、Principle等软件</li>
+			</ul>
+		</div>
+
+		<div style="clear:both;"></div>
+	</div>
+
+	<div class="line"></div>
+
+
+	<div class="works scale two">
+		<div class="boxTitle ">项目展示</div>
+
+		<p class="article">@项目介绍</p>
+
+		<div class="worksList">
+			<div class="worksItem">
+				<a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">
+					<img src="image/jiemian.png" width="618" height="413"  alt="">
+				</a>
+				<div class="jieshao">
+					<p class="name">界面新闻</p>
+					<p class="content">界面·财联社：界面新闻app</p>
+				</div>
+			</div>
+
+			<div class="worksItem">
+				<a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">
+					<img src="image/more.png" width="618" height="413"  alt="">
+				</a>
+				<div class="jieshao">
+					<p class="name">摩尔金融网页</p>
+					<p class="content">界面·财联社：摩尔金融官网页面</p>
+				</div>
+			</div>
+
+
+			<div class="worksItem">
+				<a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">
+					<img src="image/moeryunying.png" width="618" height="413"  alt="">
+				</a>
+				<div class="jieshao">
+					<p class="name">摩尔金融-运营设计</p>
+					<p class="content">界面·财联社：视觉设计、banner、启动页、H5</p>
+				</div>
+			</div>
+			<div class="worksItem">
+				<a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">
+					<img src="image/deling.png" width="618" height="413"  alt="">
+				</a>
+				<div class="jieshao">
+					<p class="name">OA办公</p>
+					<p class="content">德灵科技公司：移动OA，协同办公软件</p>
+				</div>
+			</div>
+			<div class="worksItem">
+				<a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">
+				<img src="image/langbo.png" width="618" height="413"  alt="">
+				</a>
+				<div class="jieshao">
+					<p class="name">朗播网</p>
+					<p class="content">官方网站、网页</p>
+				</div>
+			</div>
+			<div class="worksItem">
+				<a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">
+				<img src="image/youyong.png" width="618" height="413"  alt="">
+				</a>
+				<div class="jieshao">
+					<p class="name">有用分期</p>
+					<p class="content">品牌手机数码产品分期购买</p>
+				</div>
+			</div>
+			<div class="worksItem">
+				<a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">
+				<img src="image/meili.png" width="618" height="413"  alt="">
+				</a>
+				<div class="jieshao">
+					<p class="name">美利金融</p>
+					<p class="content">p2p投资理财</p>
+				</div>
+			</div>
+			<div class="worksItem">
+				<a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">
+				<img src="image/richang.png" width="618" height="413"  alt="">
+				</a>
+				<div class="jieshao">
+					<p class="name">日常练习</p>
+					<p class="content">日常练习、个人总结</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="line"></div>
+
+
+	<div class="contect scale p-b-107 three">
+		<div class="boxTitle ">工作经验</div>
+
+		<p class="article">@经历介绍</p>
+
+		<div class="contectItems">
+			<div class="contectItems-work">
+				<img src="image/logo_jiemian.png" alt="">
+				<div class="right">
+					<p class="time">
+						<img src="image/time_jiemian.png" alt="">
+					</p>
+					<p class="name">界面新闻</p>
+					<p class="content">界面是最受中国中产阶级欢迎的新闻及商业社交平台，旗下拥有精品新闻业务界面新闻、专业投资资讯平台摩尔金融及中国最大独立设计师电商网站尤物。</p>
+				</div>
+			</div>
+
+			<div class="contectItems-work">
+				<img src="image/logo_deling.png" alt="">
+				<div class="right">
+					<p class="time">
+						<img src="image/time_deling.png" alt="">
+					</p>
+					<p class="name">德灵科技</p>
+					<p class="content">专注企业移动社交营销平台和移动数据管理平台。开发了跨四屏移动监测优化系统、社会化营销平台以及数字导视系统等多个系统，以及覆盖商业地产、旅游地产、大型零售和电商等行业的解决方案。</p>
+				</div>
+			</div>
+
+			<div class="contectItems-work">
+				<img src="image/logo_langbo.png" alt="">
+				<div class="right">
+					<p class="time">
+						<img src="image/time_langbo.png" alt="">
+					</p>
+					<p class="name">朗播网</p>
+					<p class="content">专注托福、雅思、GRE、GMAT、新 SAT、ACT 等出国留学考试以及考研英语、四六级等国内英语考试，为学习者提供课程、练习、测评、问答、社区等一站式服务。</p>
+				</div>
+			</div>
+
+			<div class="contectItems-work">
+				<img src="image/logo_meili.png" alt="">
+				<div class="right">
+					<p class="time">
+						<img src="image/time_meili.png" alt="">
+					</p>
+					<p class="name">美利金融</p>
+					<p class="content">美利金融是一款关于美好生活的金融p2p投资理财产品，专注于个人消费金融，以金融服务帮助年轻人创造美好生活，是一个具有温度的互联网金融平台。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="line"></div>
+
+	<div class="contect scale four">
+		<div class="boxTitle ">联系我</div>
+
+		<p class="article">@联系方式</p>
+
+		<div class="ditu">
+			<img src="image/ditu.png" alt="">
+		</div>
+
+		<p class="message">* 以上作品均为本人所参与的实际项目以及原创作品</p>
+
+	</div>
+
+	<div id="myModal" style="font-size: 0px" class="reveal-modal">
+
+
+	</div>
+	<a class="close-reveal-modal" id="close"></a>
+	<div class="flex-border"></div>
+	<div class="flex-bottom-border"></div>
+	<script type="text/javascript"  src="js/js.js"></script>
+	<script type="text/javascript" src="js/jquery.reveal.js"></script>
+	<script>
+
+		setTimeout(function(){
+			$('.loding').fadeOut();
+		},2000)
+
+		var imgArr = [
+	    ["image/jiemian_01.jpg","image/jiemian_02.jpg","image/jiemian_03.gif","image/jiemian_04.jpg","image/jiemian_05.gif","image/jiemian_06.jpg","image/jiemian_07.gif","image/jiemian_08.jpg"],
+			["image/moer_01.jpg","image/moer_02.jpg"],
+			["image/moeryunying_01.jpg","image/moeryunying_02.jpg"],
+			["image/deling_01.jpg","image/deling_02.jpg","image/deling_03.jpg"],
+			["image/langbo_01.jpg","image/langbo_02.jpg","image/langbo_03.jpg"],
+			["image/youyong_01.jpg","image/youyong_02.jpg"],
+			["image/meili_01.jpg","image/meili_02.jpg"],
+			["image/richang_01.jpg","image/richang_02.jpg","image/richang_03.gif","image/richang_04.gif","image/richang_05.gif","image/richang_06.gif","image/richang_07.gif","image/richang_08.jpg"]
+		]
+
+		// $('.worksItem').hover(function(){
+		// 	// $(this).find('.ItemBox').addClass('activeBox')
+		//
+		// },function(){
+		// 	// $(this).find('.ItemBox').removeClass('activeBox')
+		// })
+
+		$('.worksItem').click(function(){
+			var th = $(this).index();
+			var imgHtml = "";
+			for(var i = 0; i<imgArr[th].length; i++){
+				if (imgArr[th][i].indexOf('richang') !== -1) {
+					if (imgArr[th][i].indexOf('gif') !== -1) {
+						imgHtml += `<img class="richang m-b-40" src= "${imgArr[th][i]}">`;
+					} else {
+						imgHtml += `<img class="richang" src= "${imgArr[th][i]}">`;
+					}
+				} else {
+					imgHtml += `<img src= "${imgArr[th][i]}">`;
+				}
+			}
+			$('body').css("overflow","hidden")
+			$('#myModal').html(imgHtml)
+
+			$('#close').show();
+			console.log(imgHtml)
+		})
+
+		$('#close').bind("click", function(){
+			$(this).hide();
+			$('body').css("overflow","inherit")
+		})
+
+		$('.navList li').click(function(){
+			var th = $(this).index();
+			var top = $('.one').position().top;
+			var top1 = $('.two').position().top;
+			var top2 = $('.three').position().top;
+			var top3 = $('.four').position().top;
+
+			if (th === 0) {
+				$('html,body').animate({scrollTop: 0 + 'px'}, 500);
+			};
+
+			if (th === 1) {
+				$('html,body').animate({scrollTop: top + 'px'}, 500);
+			};
+
+			if (th === 2) {
+				$('html,body').animate({scrollTop: top1 + 'px'}, 500);
+			};
+
+			if (th === 3) {
+				$('html,body').animate({scrollTop: top2 + 'px'}, 500);
+			};
+			if (th === 4) {
+				$('html,body').animate({scrollTop: top3 + 'px'}, 500);
+			};
+
+
+			//alert(th)
+		})
+
+		$(window).bind('scroll',function(scroll){
+			var top = $('.two').position().top - 100;
+			var top2 = $('.three').position().top - 100;
+			var top4 = $('.four').position().top - 100;
+			var winScTop = $(window).scrollTop();
+
+			if (770 < winScTop) {
+				$('.navList li').eq(1).addClass('active').siblings().removeClass('active')
+				$('.navBox').addClass('fixed')
+			} else {
+				$('.navList li').eq(0).addClass('active').siblings().removeClass('active')
+				$('.navBox').removeClass('fixed')
+			};
+
+			if (top < winScTop) {
+				$('.navList li').eq(2).addClass('active').siblings().removeClass('active')
+			};
+
+			if (top2 < winScTop) {
+				$('.navList li').eq(3).addClass('active').siblings().removeClass('active')
+			};
+
+			if (5073 <= winScTop) {
+				$('.navList li').eq(4).addClass('active').siblings().removeClass('active')
+			};
+
+			console.log(top)
+			// console.log($(window).scrollTop())
+		})
+	</script>
+</body>
+</html>

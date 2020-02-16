@@ -1,0 +1,379 @@
+@charset:"UTF-8";
+*{margin:0;padding:0;}
+::-webkit-scrollbar {
+    width: 0px;
+}
+/*select{
+  appearance:none;
+-moz-appearance:none;
+-webkit-appearance:none;
+}*/
+ul li{list-style: none;}
+input[type="button"], input[type="submit"], input[type="reset"] {
+-webkit-appearance: none;
+}
+textarea {  -webkit-appearance: none;}
+input:focus{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-user-modify:read-write-plaintext-only;
+}
+a{text-decoration: none;color: inherit;}
+textarea {resize: none;}
+/* 输入文本框默认样式
+input:focus,textarea:focus {
+    outline: none;
+    border: 1px solid #f60;
+}*/
+input[type="submit"],
+ input[type="reset"],
+ input[type="button"],
+ button { -webkit-appearance: none; }
+.list-body{
+	overflow:hidden;
+}
+.margin-right{margin-right: 20px;}
+.border-none{border: none !important;}
+.border-bottom{border-bottom: 1px solid #d9d9d9;}
+.float-left{float: left;}
+.float-right{float: right;}
+
+.title{
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+.title:after{
+  content: '';
+  display: block;
+  width: 37px;
+  height: 2px;
+  margin: 12px auto 0px;
+  background: #000;
+}
+.clear_font{
+  font-size: 0px;
+}
+.weui-cells{
+  background: none !important;
+}
+.weui-label{
+  width: 85px !important;
+  color: #EA9D2C !important;
+}
+.weui-cells:before{
+  display: none !important;
+}
+.weui-cells:after{
+  background: #eba32f;
+}
+.weui-cell_select .weui-cell__bd:after{
+  border-color: #EBA32F !important;
+  transform: rotate(135deg) !important;
+}
+.nav_padding{
+  padding-top: 53px;
+}
+body{
+ -webkit-tap-highlight-color: rgba(0,0,0,0);
+  /*max-width: 750px;*/
+  margin: 0px auto;
+}
+a{
+outline:none;
+   -moz-outline-style:none;
+ }
+.avator img{
+  width: 554px;
+}
+.intro{
+  border: solid 1px #000;
+  padding: 64px 45px 94px 45px;
+  position: relative;
+}
+.intro::after{
+  content: "";
+  width: calc(100% + 12px);
+  height: calc(100% - 12px);
+  border: solid 1px #000;
+  position: absolute;
+  left: -7px;
+  top: 5px;
+}
+.intro p:first-child{
+  font-size:36px;
+  font-family:PingFang-SC-Light,PingFang-SC;
+  font-weight:300;
+  color:rgba(17,17,17,1);
+  line-height:50px;
+  letter-spacing:4px;
+}
+.intro p:nth-child(2){
+  font-size:14px;
+  font-family:PingFang-SC-Light,PingFang-SC;
+  font-weight:300;
+  color:rgba(17,17,17,1);
+  line-height:20px;
+  letter-spacing:2px;
+  margin-top: 45px;
+  margin-bottom: 40px;
+}
+.intro ul li{
+  padding-left: 29px;
+  box-sizing: border-box;
+  position: relative;
+  font-size:14px;
+  font-family:PingFang-SC-Light,PingFang-SC;
+  font-weight:300;
+  color:rgba(17,17,17,1);
+  line-height:20px;
+  letter-spacing:2px;
+  padding-bottom: 25px;
+}
+.intro ul li::after{
+  content: "";
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  background: url('../image/icon_heart.png') no-repeat;
+  background-size: 100% 100%;
+}
+.intro ul li:last-child{
+  padding-bottom: 0;
+}
+.contectItems-work .right .name{
+  font-size:20px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(16,16,16,1);
+  position: relative;
+  margin-bottom: 43px;
+  margin-top: 13px;
+}
+.contectItems-work .right .name::before{
+  content: "";
+  width:30px;
+  height:1px;
+  background:rgba(16,16,16,1);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+}
+.contectItems-work .right .content{
+  font-size:14px;
+  font-family:PingFang-SC-Light,PingFang-SC;
+  font-weight:300;
+  color:rgba(16,16,16,1);
+  line-height:24px;
+}
+.ditu{
+  width: 1264px;
+  height: 480px;
+  margin: 0 auto;
+  margin-top: 70px;
+  position: relative;
+  border: solid 1px #000;
+  padding: 16px 10px 32px 9px;
+  box-sizing: border-box;
+}
+.ditu::after {
+    content: "";
+    width: calc(100% + 12px);
+    height: calc(100% - 12px);
+    border: solid 1px #000;
+    position: absolute;
+    left: -7px;
+    top: 5px;
+}
+.ditu img{
+  width: 100%;
+}
+.message{
+  font-size:12px;
+  font-family:PingFang-SC-Regular,PingFang-SC;
+  font-weight:400;
+  color:rgba(16,16,16,1);
+  line-height:17px;
+  letter-spacing:1px;
+  width: 100%;
+  text-align: center;
+  margin: 30px 0 60px 0;
+}
+.line{
+  width:1296px;
+  height:1px;
+  background: #101010;
+  margin: 0 auto;
+  position: relative;
+}
+.line::after{
+  width:719px;
+  height:1px;
+  background: #101010;
+  position: absolute;
+  content: "";
+  left: 288px;
+  top: -2px;
+}
+.line::before{
+  width:719px;
+  height:1px;
+  background: #101010;
+  position: absolute;
+  content: "";
+  left: 288px;
+  bottom: -2px;
+}
+.p-b-107{
+  padding-bottom: 107px;
+}
+.worksItem .jieshao{
+  padding-top: 16px;
+}
+.worksItem .jieshao .name{
+  font-size:22px;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(16,16,16,1);
+  line-height:30px;
+  letter-spacing:1px;
+  position: relative;
+}
+.worksItem .jieshao .name::before{
+  content: "";
+  position: absolute;
+  width:92px;
+  height:1px;
+  background: #E8F409;
+  left: 0;
+  bottom: 0px;
+}
+.worksItem .jieshao .content{
+  font-size:12px;
+  font-family:PingFang-SC-Light,PingFang-SC;
+  font-weight:300;
+  color:rgba(51,51,51,1);
+  line-height:17px;
+  letter-spacing:1px;
+  padding-top: 8px;
+}
+.worksItem img{
+  transition: all .5s;
+}
+.worksItem img:hover{
+  transform:scale(0.9,0.9);;
+  -ms-transform:scale(0.9,0.9);;     /* IE 9 */
+  -moz-transform:scale(0.9,0.9);;    /* Firefox */
+  -o-transform:scale(0.9,0.9);;      /* Opera */
+  -webkit-transform:scale(0.9,0.9);
+
+}
+.navList li{
+  position: relative;
+  text-transform:uppercase;
+  cursor: pointer;
+}
+.navList li.active::before{
+  position:absolute;
+  left:18px;
+  z-index:2;
+  display:block;
+  width:calc(100% - 36px);
+  content:"";
+  margin-bottom:-2px;
+  border-bottom:rgba(232,244,7,1) 4px solid;
+  bottom:50%;
+}
+.navList li:after{
+  position:absolute;
+  left:18px;
+  z-index:2;
+  display:block;
+  width:calc(100% - 36px);
+  content:"";
+  margin-bottom:-2px;
+  border-bottom:rgba(232,244,7,1) 4px solid;
+  -webkit-transform-origin:right top;
+  -moz-transform-origin:right top;
+  -o-transform-origin:right top;
+  -ms-transform-origin:right top;
+  transform-origin:right top;
+  -webkit-transform:scale(0,1);
+  -moz-transform:scale(0,1);
+  -o-transform:scale(0,1);
+  -ms-transform:scale(0,1);
+  transform:scale(0,1);
+  -o-transition:transform .3s ease-in;
+  transition:transform .3s ease-in
+}
+.navList li:hover:after{
+  -webkit-transform-origin:left top;
+  -moz-transform-origin:left top;
+  -o-transform-origin:left top;
+  -ms-transform-origin:left top;
+  transform-origin:left top;
+  -webkit-transform:scale(1,1);
+  -moz-transform:scale(1,1);
+  -o-transform:scale(1,1);
+  -ms-transform:scale(1,1);
+  transform:scale(1,1)}
+.navList li::after{
+  bottom:50%;
+  -webkit-transition:transform .3s ease-in;
+  -moz-transition:transform .3s ease-in
+}
+.navBox::after{
+  position: absolute;
+  top: 0;
+  left: 29px;
+  bottom: -1px;
+  width: calc(100% - 58px);
+  content: "";
+  border-bottom: #111 1px solid;
+  -webkit-transform-origin: right top;
+  -moz-transform-origin: right top;
+  -o-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transform: scale(0,1);
+  -moz-transform: scale(0,1);
+  -o-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+  -webkit-transition: transform 1s ease;
+  -moz-transition: transform 1s ease;
+  -o-transition: transform 1s ease;
+  transition: transform 1s ease;
+  z-index: -1;
+}
+.transition03 {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.navBox.autofix_sb.fixed:after {
+    webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -o-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: scale(1,1);
+    -moz-transform: scale(1,1);
+    -o-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    transform: scale(1,1);
+}
+#myModal img{
+  width: 100%;
+}
+#myModal img.richang{
+  width: calc(100% - 80px);
+  margin-left: 40px;
+}
+#myModal img.richang.m-b-40{
+  margin-bottom: 40px;
+}
