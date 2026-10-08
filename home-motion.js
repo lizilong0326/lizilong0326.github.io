@@ -335,6 +335,12 @@
     }
     if (!pages.has(id)) return;
     event.preventDefault();
+    const group = link.closest('.group-header')?.closest('.sidebar-group');
+    if (group && current === id) {
+      const expanded = group.querySelector('.group-toggle').getAttribute('aria-expanded') === 'true';
+      setGroupOpen(group, !expanded);
+      return;
+    }
     navigate(id);
   });
   showPage(false);
