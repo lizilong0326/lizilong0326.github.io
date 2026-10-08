@@ -38,8 +38,9 @@
       entryActive = false;
       entryExiting = false;
       entryListeners.abort();
-      for (const item of [entryFade]) {
-        if (item) { item.onfinish = item.oncancel = null; item.cancel(); }
+      if (entryFade) {
+        entryFade.onfinish = entryFade.oncancel = null;
+        entryFade.cancel();
       }
       entryFade = null;
       entry.hidden = true;
@@ -100,7 +101,6 @@
 
   function unfoldWorkspace(includeChrome = true) {
     if (reduced.matches || !Element.prototype.animate) return;
-    const timingScale = 1;
     const interaction = new AbortController();
     const reveal = (element, delay, duration, distance = 6, opacity = 0) => {
       if (!element) return;
@@ -108,8 +108,8 @@
         {opacity, transform: `translateY(${distance}px)`},
         {opacity: 1, transform: 'translateY(0)'}
       ], {
-        delay: delay * timingScale,
-        duration: duration * timingScale,
+        delay,
+        duration,
         easing: 'cubic-bezier(.2,.75,.2,1)',
         fill: 'backwards'
       });
