@@ -15,12 +15,14 @@
 .page-ghost-track{height:100%}
 
 /* Preserve the application sidebar, with chapters in reading order. */
-.workspace-nav{gap:4px}
+.workspace-nav{gap:6px}
 .nav-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sidebar-group{margin-top:18px}
-.group-header{display:flex;align-items:center;gap:2px}
-.group-header>.nav-row{flex:1;min-width:0}
-.group-toggle{width:26px;height:28px;padding:5px;color:var(--faint);flex-shrink:0}
+.sidebar-group{margin:0}
+.group-header{position:relative;display:flex;align-items:center;border-radius:10px}
+.group-header:hover,.group-header:has(>.nav-row[aria-current]){background:var(--hover)}
+.group-header>.nav-row{flex:1;min-width:0;padding-right:40px}
+.group-header>.nav-row:hover,.group-header>.nav-row[aria-current],.group-header>.group-toggle:hover{background:transparent}
+.group-toggle{position:absolute;right:5px;top:50%;transform:translateY(-50%);width:26px;height:28px;padding:5px;color:var(--faint);flex-shrink:0}
 .group-toggle svg{width:16px;height:16px}
 .group-toggle[aria-expanded="false"] svg{transform:rotate(-90deg)}
 .group-items{display:flex;flex-direction:column;gap:3px;margin-top:4px}
@@ -28,7 +30,7 @@
 .group-items .list-row{padding:8px 10px 8px 38px;font-size:13px;color:var(--muted)}
 .group-items .list-row[aria-current]{color:var(--ink)}
 .sidebar-group.has-current .group-header>.nav-row{color:var(--ink);font-weight:500}
-.nav-secondary{display:flex;flex-direction:column;gap:4px;margin-top:20px}
+.nav-secondary{display:flex;flex-direction:column;gap:6px;margin:0}
 .header-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .replay-page{color:var(--muted)}
 
