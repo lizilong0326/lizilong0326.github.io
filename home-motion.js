@@ -152,13 +152,41 @@
     }
   }
 
+  // Every interaction owns one cancellable transition; settle before leaving a page.
+  const interactions = new Map();
+  const ease = 'cubic-bezier(.22,.68,.2,1)';
+  const canMoveUI = () => !reduced.matches && Boolean(Element.prototype.animate);
+  function stopInteraction(element, settle = false) {
+    const state = interactions.get(element);
+    if (!state) return;
+    state.animation.onfinish = null;
+    state.animation.cancel();
+    interactions.delete(element);
+    if (settle) state.finish();
+  }
+  function transition(element, frames, duration, finish, complete = finish) {
+    stopInteraction(element);
+    const effect = element.animate(frames, {duration, easing:ease});
+    interactions.set(element, {animation:effect, finish});
+    effect.onfinish = () => {
+      interactions.delete(element);
+      complete();
+    };
+  }
+  function settleInteractions() {
+    [...interactions.keys()].forEach(element => stopInteraction(element, true));
+  }
+
   function applySidebar(returnFocus = false) {
     const visible = mobile.matches ? mobileOpen : !desktopCollapsed;
     shell.classList.toggle('sidebar-collapsed', !mobile.matches && desktopCollapsed);
     shell.classList.toggle('sidebar-open', mobile.matches && mobileOpen);
     sidebar.inert = !visible;
     workspace.inert = mobile.matches && mobileOpen;
-    scrim.hidden = !(mobile.matches && mobileOpen);
+    // Visibility is delayed by CSS so the closing drawer and scrim can fade out.
+    scrim.hidden = false;
+    scrim.classList.toggle('is-visible', mobile.matches && mobileOpen);
+    scrim.inert = !(mobile.matches && mobileOpen);
     openButton.setAttribute('aria-expanded', String(visible));
     if (mobile.matches && mobileOpen) {
       sidebar.setAttribute('role', 'dialog');
@@ -189,12 +217,57 @@
   });
   applySidebar();
 
-  function setGroupOpen(group, open) {
+  function setGroupOpen(group, open, animate = true) {
     const button = group.querySelector('.group-toggle');
-    group.querySelector('.group-items').hidden = !open;
+    const items = group.querySelector('.group-items');
+    if (button.getAttribute('aria-expanded') === String(open)) return;
+    const height = items.getBoundingClientRect().height;
+    const opacity = items.hidden ? 0 : getComputedStyle(items).opacity;
+    const margin = items.hidden ? 0 : parseFloat(getComputedStyle(items).marginTop);
+    stopInteraction(items);
     button.setAttribute('aria-expanded', String(open));
     button.setAttribute('aria-label', `${open ? '收起' : '展开'}${button.dataset.groupLabel}分组`);
+    if (!open && items.contains(document.activeElement)) button.focus({preventScroll:true});
+    items.inert = !open;
+    const finish = () => { items.hidden = !open; items.classList.remove('is-expanding'); };
+    if (!animate || !canMoveUI() || !sidebar.getBoundingClientRect().width) { finish(); return; }
+    items.hidden = false;
+    const target = open ? items.getBoundingClientRect().height : 0;
+    items.classList.add('is-expanding');
+    transition(items, [
+      {height:`${height}px`, opacity, marginTop:`${margin}px`},
+      {height:`${target}px`, opacity:open ? 1 : 0, marginTop:open ? '4px' : '0px'}
+    ], 280, finish);
   }
+
+  document.querySelectorAll('.case-details').forEach(details => {
+    const summary = details.querySelector('summary');
+    const body = details.querySelector('.case-detail-body');
+    summary.setAttribute('aria-expanded', String(details.open));
+    summary.addEventListener('click', event => {
+      event.preventDefault();
+      const open = summary.getAttribute('aria-expanded') !== 'true';
+      const height = details.getBoundingClientRect().height;
+      const opacity = details.open ? getComputedStyle(body).opacity : 0;
+      stopInteraction(details);
+      stopInteraction(body);
+      summary.setAttribute('aria-expanded', String(open));
+      if (!open && body.contains(document.activeElement)) summary.focus({preventScroll:true});
+      body.inert = !open;
+      const finish = () => {
+        details.open = open;
+        details.classList.remove('is-expanding');
+        stopInteraction(body);
+      };
+      if (!canMoveUI()) { finish(); return; }
+      details.open = true;
+      const target = open ? details.getBoundingClientRect().height : summary.offsetHeight + parseFloat(getComputedStyle(details).borderTopWidth);
+      details.classList.add('is-expanding');
+      transition(body, [{opacity}, {opacity:open ? 1 : 0}], 360, () => {});
+      transition(details, [{height:`${height}px`}, {height:`${target}px`}], 360, finish);
+    });
+  });
+
   sidebar.querySelectorAll('.group-toggle').forEach(button => {
     button.addEventListener('click', () => setGroupOpen(button.closest('.sidebar-group'), button.getAttribute('aria-expanded') !== 'true'));
   });
@@ -203,16 +276,39 @@
   const projectGroups = [...document.querySelectorAll('[data-project-category]')];
   const projectPanel = document.querySelector('#project-tab-panel');
   function selectProjectTab(tab) {
+    if (tab.getAttribute('aria-selected') === 'true') return;
     const filter = tab.dataset.projectFilter;
     projectTabs.forEach(item => {
       const selected = item === tab;
       item.setAttribute('aria-selected', String(selected));
       item.tabIndex = selected ? 0 : -1;
     });
-    projectGroups.forEach(group => {
-      group.hidden = filter !== 'all' && group.dataset.projectCategory !== filter;
-    });
-    projectPanel.setAttribute('aria-labelledby', tab.id);
+    const height = projectPanel.getBoundingClientRect().height;
+    const opacity = getComputedStyle(projectPanel).opacity;
+    stopInteraction(projectPanel);
+    const applyFilter = () => {
+      projectGroups.forEach(group => {
+        group.hidden = filter !== 'all' && group.dataset.projectCategory !== filter;
+      });
+      projectPanel.setAttribute('aria-labelledby', tab.id);
+    };
+    const finish = () => {
+      applyFilter();
+      projectPanel.inert = false;
+      projectPanel.classList.remove('is-expanding');
+    };
+    if (canMoveUI()) {
+      projectPanel.inert = true;
+      projectPanel.classList.add('is-expanding');
+      transition(projectPanel, [{opacity}, {opacity:0}], 110, finish, () => {
+        applyFilter();
+        const target = projectPanel.getBoundingClientRect().height;
+        transition(projectPanel, [
+          {opacity:0, height:`${height}px`, transform:'translateY(5px)'},
+          {opacity:1, height:`${target}px`, transform:'translateY(0)'}
+        ], 300, finish);
+      });
+    } else finish();
     main.scrollTop = 0;
     positions.set('project-tool', 0);
     tab.scrollIntoView({block:'nearest', inline:'nearest'});
@@ -290,7 +386,7 @@
     if (!pages.has(requested)) history.replaceState(null, '', '#home');
     const changed = current !== id;
     const firstRender = current === null;
-    if (!firstRender) { finishWelcome(); pageMotion?.cancel(); }
+    if (!firstRender) { finishWelcome(); pageMotion?.cancel(); settleInteractions(); }
     const direction = firstRender ? 0 : Math.sign(pageOrder.indexOf(id) - pageOrder.indexOf(current));
     clearPageTransition();
     if (changed && !firstRender && !shell.inert && !reduced.matches && Element.prototype.animate) captureOutgoing(pages.get(current));
@@ -309,7 +405,7 @@
     sidebar.querySelectorAll('.sidebar-group').forEach(group => {
       const active = group.querySelector('[aria-current="page"]');
       group.classList.toggle('has-current', Boolean(active));
-      if (active) setGroupOpen(group, true);
+      if (active) setGroupOpen(group, true, !firstRender);
     });
     if (!mobile.matches && !desktopCollapsed) {
       const scroller = sidebar.querySelector('.sidebar-scroll');
@@ -385,7 +481,7 @@
       event.preventDefault();
       closeSidebar(true);
     } else if (event.key === 'Tab') {
-      const focusable = [...sidebar.querySelectorAll('a[href],button,summary')].filter(el => el.getClientRects().length);
+      const focusable = [...sidebar.querySelectorAll('a[href],button,summary')].filter(el => el.getClientRects().length && !el.closest('[inert]'));
       const first = focusable[0], last = focusable.at(-1);
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
@@ -398,6 +494,7 @@
       finishWelcome();
       pageMotion?.cancel();
       clearPageTransition();
+      settleInteractions();
     }
   });
   window.addEventListener('pagehide', () => {
@@ -406,5 +503,7 @@
     finishWelcome();
     pageMotion?.cancel();
     clearPageTransition();
+    settleInteractions();
   });
+  window.addEventListener('resize', settleInteractions);
 })();
