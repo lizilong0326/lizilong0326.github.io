@@ -55,7 +55,6 @@
 .essay-body code{font-size:.9em;overflow-wrap:anywhere}
 .essay-body blockquote{margin:24px 0;padding:4px 0 4px 20px;border-left:2px solid var(--line)}
 .essay-body blockquote p{margin:0}
-.essay-source{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;line-height:1.8;color:var(--muted)}
 .essay-navigation{display:flex;flex-direction:column;align-items:flex-start;margin-top:12px}
 .essay-navigation .text-link{margin-top:4px;line-height:1.6}
 .article-read{white-space:nowrap;flex-shrink:0}
