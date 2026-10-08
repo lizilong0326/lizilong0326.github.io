@@ -247,7 +247,12 @@
   }
 
   function showPage(focus = true, fromSwipe = false) {
-    const requested = location.hash.slice(1) || 'home';
+    let requested = location.hash.slice(1) || 'home';
+    // Earlier resume-derived notes have been replaced by the authored collection.
+    if (['note-career', 'note-ai', 'note-making'].includes(requested)) {
+      requested = 'writing';
+      history.replaceState(null, '', '#writing');
+    }
     const id = pages.has(requested) ? requested : 'home';
     if (!pages.has(requested)) history.replaceState(null, '', '#home');
     const changed = current !== id;

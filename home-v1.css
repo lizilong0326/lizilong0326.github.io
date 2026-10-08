@@ -44,3 +44,20 @@
 
 .welcome-platforms a{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
 .welcome-platforms .platform-logo{display:block;width:24px;height:24px;flex:0 0 24px;object-fit:contain;border-radius:4px}
+
+/* Long-form essays remain text-only and share the existing workspace layout. */
+.essay-page{max-width:740px;padding-bottom:64px}
+.essay-page .page-heading h1{font-size:28px;line-height:1.5;letter-spacing:-.02em}
+.essay-body p{line-height:1.95;margin-bottom:20px;color:#414141;overflow-wrap:anywhere}
+.essay-body h2{font-size:21px;line-height:1.55;font-weight:600;margin:40px 0 18px}
+.essay-body h3{font-size:18px;line-height:1.6;font-weight:600;margin:28px 0 14px}
+.essay-body strong{font-weight:600;color:var(--ink)}
+.essay-body code{font-size:.9em;overflow-wrap:anywhere}
+.essay-body blockquote{margin:24px 0;padding:4px 0 4px 20px;border-left:2px solid var(--line)}
+.essay-body blockquote p{margin:0}
+.essay-source{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;line-height:1.8;color:var(--muted)}
+.essay-navigation{display:flex;flex-direction:column;align-items:flex-start;margin-top:12px}
+.essay-navigation .text-link{margin-top:4px;line-height:1.6}
+.article-read{white-space:nowrap;flex-shrink:0}
+@media(max-width:760px){.essay-page .page-heading h1{font-size:24px}.essay-body p{line-height:1.9}.essay-body h2{font-size:20px}.article-row .card-bottom{align-items:flex-start}.article-read{font-size:12px}}
+.article-list{overflow-x:clip;overflow-clip-margin:5px;padding:6px 10px;margin:-6px -10px}
