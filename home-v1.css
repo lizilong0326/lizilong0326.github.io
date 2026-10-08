@@ -62,3 +62,25 @@
 .article-read{white-space:nowrap;flex-shrink:0}
 @media(max-width:760px){.essay-page .page-heading h1{font-size:24px}.essay-body p{line-height:1.9}.essay-body h2{font-size:20px}.article-row .card-bottom{align-items:flex-start}.article-read{font-size:12px}}
 .article-list{overflow-x:clip;overflow-clip-margin:5px;padding:6px 10px;margin:-6px -10px}
+
+/* Public repositories grouped by their primary purpose. */
+.open-source-group{margin-top:44px;min-width:0}
+.open-source-group-heading{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.open-source-number{font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+.open-source-group-heading h2{font-size:19px;font-weight:600}
+.open-source-count{font-size:12px;color:var(--muted);margin-left:auto}
+.open-source-description{font-size:14px;line-height:1.7;color:var(--muted);margin-top:10px}
+.open-project{padding:26px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.open-project-heading h3{font-size:17px;font-weight:600;line-height:1.5;margin:0}
+.open-project-heading p{font-size:13px;color:var(--muted);margin-top:5px}
+.open-project>p{font-size:15px;line-height:1.85;color:var(--muted);margin-top:14px}
+.open-project>.open-project-detail{font-size:13px;line-height:1.8;margin-top:9px}
+.open-project-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 18px;margin-top:18px}
+.open-project-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.open-project-tags li{font-size:11px;line-height:1.6;padding:3px 8px;border-radius:6px;background:var(--hover);color:var(--muted)}
+.open-project-links{display:flex;flex-wrap:wrap;gap:16px}
+.open-project-links a,.open-source-footer a{font-size:13px;line-height:1.8;text-underline-offset:4px}
+.open-project-links a:hover,.open-source-footer a:hover{text-decoration:underline}
+.open-source-footer{margin-top:32px;padding:18px 0}
+.open-source-footer p{font-size:14px;line-height:1.7;color:var(--muted);margin-bottom:8px}
+@media(max-width:760px){.open-source-group{margin-top:34px}.open-source-group-heading{gap:8px}.open-source-group-heading h2{font-size:17px}.open-project{padding-block:22px}.open-project-bottom{align-items:flex-start;flex-direction:column}}
