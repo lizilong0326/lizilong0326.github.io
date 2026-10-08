@@ -7,7 +7,7 @@
   <meta name="color-scheme" content="light">
   <title>李子龙 · AI 产品经理</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f9f9f9'/%3E%3Cpath d='M8 12l-4 4 4 4m16-8l4 4-4 4M19 7l-6 18' stroke='%230d0d0d' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="home-v1.css?v=project-tabs-1">
+  <link rel="stylesheet" href="home-v1.css?v=case-cards-1">
   <link rel="stylesheet" href="entry-screen.css?v=light-1">
   <link rel="stylesheet" href="meteor-background.css?v=2">
   <script>
@@ -94,8 +94,44 @@
   <div class="page-heading"><p class="eyebrow">从业务场景出发</p><h1 id="projects-title" tabindex="-1">项目与作品</h1><p class="page-description">这里记录我实际参与的产品、负责的工作和公开作品。</p></div>
   <div class="project-list"><a class="project-card" href="#project-ai"><div class="card-meta"><span>企业 AI 产品</span><span>产品与交付</span></div><h2>销售陪练、知识治理与业务协同</h2><p>在房车销售、汽车回收和在线咨询场景中，设计模型、规则与人工协作的产品流程。</p><div class="card-bottom"><span>Agent / 知识治理 / 多模态 / RAG</span><span>查看实践 →</span></div></a><a class="project-card" href="#project-tool"><div class="card-meta"><span>开源项目</span><span>产品与交付</span></div><h2>从效率工具到 Agent Skills</h2><p>9 个公开项目，覆盖效率工具、Agent Skills、提示词与 PE 工程、资源导航与个人站点。持续把产品想法和实践方法做成可以复用的作品。</p><div class="card-bottom"><span>工具 / Skills / PE / 资源与站点</span><span>查看实践 →</span></div></a><a class="project-card" href="#project-experiment"><div class="card-meta"><span>线上共创项目</span><span>产品与交付</span></div><h2>未明·海龟汤与一炷</h2><p>围绕多人推理与东方仪式两种体验，将 AI 主持、实时协作和多轮解读组织成完整产品流程，连接体验设计、工程联调与效果评测。</p><div class="card-bottom"><span>AI 主持 / 多轮交互 / 检索评测</span><span>查看实践 →</span></div></a></div>
 </section><section class="page reading-page" id="project-ai" data-motion="rise" data-page data-title="企业 AI 产品" hidden aria-labelledby="project-ai-title">
-  <div class="page-heading"><p class="eyebrow">业务场景 / 产品方案 / 应用交付</p><h1 id="project-ai-title" tabindex="-1">企业 AI 产品</h1><p class="page-description">重点是让 AI 进入业务流程，并把知识依据、人工确认与异常恢复设计清楚。</p></div>
-  <div class="document-meta"><span>产品规划与交互流程设计</span><span>研发协作与前端交付</span></div><div class="prose"><h2>3721优势科学 · AI 房车销售陪练</h2><p>面向房车经销商销售团队，连接情境化陪练、沟通复盘和真实客户跟进。把门店车型知识与销售经验放进多轮训练，帮助销售在模拟场景中练习，在真实沟通中获得有业务依据的建议。</p><p><strong>我的工作：</strong>主导产品方案、MVP 与交互流程设计；协同销售培训老师完善 System Prompt，设计客户角色、上下文供给和结构化评分；负责小程序前端及联调，完善 OCR／ASR 材料提交、云端异步评分、任务补发和失败恢复。</p><p><strong>交付与反馈：</strong>小程序已上线并应用于多品牌、多门店。首家推广门店销售人均每日训练约 1～3 次；经专业销售培训老师对约 10 份评分报告抽样评审，整体质量的主观评价由初期约 60% 提升至约 85%。</p><h2>小野驴 · 房车经销商知识平台</h2><p>将车型资料、门店政策与销售经验转为有来源、有企业归属、有审核记录和生效版本的知识资产，支持销售查询与销售辅助应用。</p><p><strong>我的工作：</strong>规划资料准入、PII 脱敏、模型结构化抽取和人工审核发布；定义企业隔离、角色权限及版本规则；用 Vue＋TypeScript 完成 PC 与 H5 前端，交付分片上传、逐文件处理状态及原文核对。</p><p><strong>交付与反馈：</strong>知识整理、审核发布和版本维护已上线。代表性门店初始化建库约 2 周，复杂车型配置查询任务耗时缩短约 70%。后续经销商专属智能客服属于应用拓展方向。</p><h2>车兄弟报废车回收 · AI 预检与报价</h2><p>将材料识别、补贴资格预检与企业收购参考估价前置到收车前，连接车主线上提交、业务员现场核验和内部审核。</p><p><strong>我的工作：</strong>负责产品方案、交互流程设计与前端实现，协同接入证件 OCR、车辆照片识别和 VIN 核对；拆分资格规则与参考估价，保留人工校对、材料补交和授权人员最终定价。</p><p><strong>交付与反馈：</strong>材料齐备一次通过率由约 60% 提升至约 80%；客户提交诉求至最终收车成交的全流程周期缩短约 50%。</p><h2>21 世纪房车 · 智能客服</h2><p>为官网提供选车咨询、用车问答与人工接手入口，将文章评论中的用户跟进转入在线会话，连接咨询、购车意向与经销商服务。</p><p><strong>我的工作：</strong>负责产品方案、模型评测与前端交付，协同接入通义千问；设计意图识别、Query 改写、知识库路由和查询参数校验，协同实现向量检索与 Rerank；通过 WebSocket 呈现流式回复并完善连接与失败反馈。</p><p><strong>交付与反馈：</strong>官网智能客服已上线。基于数十组抽样会话逐条复核，回答可用率由初期约 60%～70% 提升至约 80%。2026 年以外包形式参与的文章 RAG 新版仍处于研发阶段，已完成相关前端呈现与后续开发交接。</p></div><a class="text-link" href="#projects">← 全部项目与作品</a>
+<div class="page-heading"><p class="eyebrow">业务场景 / 产品方案 / 应用交付</p><h1 id="project-ai-title" tabindex="-1">企业 AI 产品</h1><p class="page-description">从销售训练、知识治理到业务协同，把 AI 能力落实为可交付的产品流程。</p></div>
+<div class="case-collection-heading"><span>4 个企业项目</span><span>产品定位 · 关键设计 · 我的贡献</span></div>
+<div class="case-grid"><article class="case-card" aria-labelledby="project-ai-case-0">
+<div class="case-card-top"><span class="case-number">01 / 销售训练</span><span class="case-status">多品牌、多门店应用</span></div>
+<header class="case-card-heading"><p class="case-brand">3721优势科学</p><h2 id="project-ai-case-0">AI 房车销售陪练</h2><p class="case-summary">让销售在模拟客户场景中训练，在沟通复盘与真实跟进中获得有业务依据的建议。</p></header>
+<ol class="case-steps" aria-label="核心产品流程"><li>情境陪练</li><li>沟通复盘</li><li>客户跟进</li></ol>
+<div class="case-role"><span>我的角色</span><p>主导产品方案与交互设计 · 负责小程序前端及联调</p></div>
+<div class="case-metrics" aria-label="交付与反馈"><div><p class="case-metric-value">约 1～3 次</p><h3>每位销售每日训练</h3><p class="case-metric-note">首家推广门店</p></div><div><p class="case-metric-value">约 85%</p><h3>评分报告主观质量</h3><p class="case-metric-note">由初期约 60% 提升；培训老师抽评约 10 份报告</p></div></div>
+
+<details class="case-details"><summary><span class="case-expand-label">展开项目细节</span><span class="case-collapse-label">收起项目细节</span><span class="case-detail-mark" aria-hidden="true"></span></summary><div class="case-detail-body"><div><h3>产品背景</h3><p>面向房车经销商销售团队，连接情境化陪练、沟通复盘和真实客户跟进。把门店车型知识与销售经验放进多轮训练，帮助销售在模拟场景中练习，在真实沟通中获得有业务依据的建议。</p></div><div><h3>我的工作</h3><p>主导产品方案、MVP 与交互流程设计；协同销售培训老师完善 System Prompt，设计客户角色、上下文供给和结构化评分；负责小程序前端及联调，完善 OCR／ASR 材料提交、云端异步评分、任务补发和失败恢复。</p></div><div><h3>交付与反馈</h3><p>小程序已上线并应用于多品牌、多门店。首家推广门店销售人均每日训练约 1～3 次；经专业销售培训老师对约 10 份评分报告抽样评审，整体质量的主观评价由初期约 60% 提升至约 85%。</p></div></div></details>
+</article>
+<article class="case-card" aria-labelledby="project-ai-case-1">
+<div class="case-card-top"><span class="case-number">02 / 知识治理</span><span class="case-status">知识管理流程已上线</span></div>
+<header class="case-card-heading"><p class="case-brand">小野驴</p><h2 id="project-ai-case-1">房车经销商知识平台</h2><p class="case-summary">将车型资料、门店政策与销售经验，组织成有来源、有审核、有企业归属和生效版本的知识资产。</p></header>
+<ol class="case-steps" aria-label="核心产品流程"><li>资料准入</li><li>抽取与审核</li><li>版本发布</li></ol>
+<div class="case-role"><span>我的角色</span><p>产品规划与权限设计 · PC / H5 前端交付</p></div>
+<div class="case-metrics" aria-label="交付与反馈"><div><p class="case-metric-value">约 2 周</p><h3>门店初始化建库</h3><p class="case-metric-note">代表性门店</p></div><div><p class="case-metric-value">缩短约 70%</p><h3>复杂配置查询耗时</h3><p class="case-metric-note">复杂车型配置查询任务</p></div></div>
+
+<details class="case-details"><summary><span class="case-expand-label">展开项目细节</span><span class="case-collapse-label">收起项目细节</span><span class="case-detail-mark" aria-hidden="true"></span></summary><div class="case-detail-body"><div><h3>产品背景</h3><p>将车型资料、门店政策与销售经验转为有来源、有企业归属、有审核记录和生效版本的知识资产，支持销售查询与销售辅助应用。</p></div><div><h3>我的工作</h3><p>规划资料准入、PII 脱敏、模型结构化抽取和人工审核发布；定义企业隔离、角色权限及版本规则；用 Vue＋TypeScript 完成 PC 与 H5 前端，交付分片上传、逐文件处理状态及原文核对。</p></div><div><h3>交付与反馈</h3><p>知识整理、审核发布和版本维护已上线。代表性门店初始化建库约 2 周，复杂车型配置查询任务耗时缩短约 70%。后续经销商专属智能客服属于应用拓展方向。</p></div></div></details>
+</article>
+<article class="case-card" aria-labelledby="project-ai-case-2">
+<div class="case-card-top"><span class="case-number">03 / 业务协同</span><span class="case-status">覆盖提交、核验与审核</span></div>
+<header class="case-card-heading"><p class="case-brand">车兄弟报废车回收</p><h2 id="project-ai-case-2">AI 预检与报价</h2><p class="case-summary">把材料识别、补贴资格预检与参考估价前置到收车前，连接车主、现场业务员和内部审核。</p></header>
+<ol class="case-steps" aria-label="核心产品流程"><li>线上预检</li><li>现场核验</li><li>人工定价</li></ol>
+<div class="case-role"><span>我的角色</span><p>产品方案与交互设计 · 前端实现及识别能力联调</p></div>
+<div class="case-metrics" aria-label="交付与反馈"><div><p class="case-metric-value">约 60% → 80%</p><h3>材料齐备一次通过率</h3><p class="case-metric-note">从线上提交到材料核对</p></div><div><p class="case-metric-value">缩短约 50%</p><h3>诉求至成交全流程周期</h3><p class="case-metric-note">客户提交诉求至最终收车成交</p></div></div>
+
+<details class="case-details"><summary><span class="case-expand-label">展开项目细节</span><span class="case-collapse-label">收起项目细节</span><span class="case-detail-mark" aria-hidden="true"></span></summary><div class="case-detail-body"><div><h3>产品背景</h3><p>将材料识别、补贴资格预检与企业收购参考估价前置到收车前，连接车主线上提交、业务员现场核验和内部审核。</p></div><div><h3>我的工作</h3><p>负责产品方案、交互流程设计与前端实现，协同接入证件 OCR、车辆照片识别和 VIN 核对；拆分资格规则与参考估价，保留人工校对、材料补交和授权人员最终定价。</p></div><div><h3>交付与反馈</h3><p>材料齐备一次通过率由约 60% 提升至约 80%；客户提交诉求至最终收车成交的全流程周期缩短约 50%。</p></div></div></details>
+</article>
+<article class="case-card" aria-labelledby="project-ai-case-3">
+<div class="case-card-top"><span class="case-number">04 / 咨询服务</span><span class="case-status">官网客服已上线</span></div>
+<header class="case-card-heading"><p class="case-brand">21 世纪房车</p><h2 id="project-ai-case-3">智能客服</h2><p class="case-summary">把选车咨询、用车问答和人工接手放进同一会话入口，衔接购车意向与后续经销商服务。</p></header>
+<ol class="case-steps" aria-label="核心产品流程"><li>意图识别</li><li>知识检索</li><li>人工接手</li></ol>
+<div class="case-role"><span>我的角色</span><p>产品方案与模型评测 · 流式会话前端交付</p></div>
+<div class="case-metrics" aria-label="交付与反馈"><div><p class="case-metric-value">约 80%</p><h3>回答可用率</h3><p class="case-metric-note">由初期约 60%～70% 提升；数十组抽样会话逐条复核</p></div><div><p class="case-metric-value">新版研发中</p><h3>文章 RAG 新版</h3><p class="case-metric-note">2026 年外包参与；已完成相关前端与后续开发交接</p></div></div>
+
+<details class="case-details"><summary><span class="case-expand-label">展开项目细节</span><span class="case-collapse-label">收起项目细节</span><span class="case-detail-mark" aria-hidden="true"></span></summary><div class="case-detail-body"><div><h3>产品背景</h3><p>为官网提供选车咨询、用车问答与人工接手入口，将文章评论中的用户跟进转入在线会话，连接咨询、购车意向与经销商服务。</p></div><div><h3>我的工作</h3><p>负责产品方案、模型评测与前端交付，协同接入通义千问；设计意图识别、Query 改写、知识库路由和查询参数校验，协同实现向量检索与 Rerank；通过 WebSocket 呈现流式回复并完善连接与失败反馈。</p></div><div><h3>交付与反馈</h3><p>官网智能客服已上线。基于数十组抽样会话逐条复核，回答可用率由初期约 60%～70% 提升至约 80%。2026 年以外包形式参与的文章 RAG 新版仍处于研发阶段，已完成相关前端呈现与后续开发交接。</p></div></div></details>
+</article></div><a class="text-link" href="#projects">← 全部项目与作品</a>
 </section><section class="page reading-page" id="project-tool" data-motion="rise" data-page data-title="开源项目" hidden aria-labelledby="project-tool-title">
 <div class="page-heading"><p class="eyebrow">持续动手 / 公开分享 / 可复用实践</p><h1 id="project-tool-title" tabindex="-1">开源项目</h1><p class="page-description">从日常工具到智能体技能，把想法做成可以使用、研究与复用的作品。这里收录我在 GitHub 公开的 9 个项目，按主要用途分为 4 类。</p></div>
 <div class="document-meta"><span>9 个公开项目</span><span>4 个方向</span><span>工具 · Skills · PE · 资源与站点</span></div>
@@ -147,22 +183,26 @@
 </article></section></div>
 <div class="open-source-footer"><p>GitHub 个人主页的介绍与展示素材也已公开。</p><a href="https://github.com/lizilong0326/lizilong0326" target="_blank" rel="noopener noreferrer">查看主页配置仓库 ↗</a></div><a class="text-link" href="#projects">← 全部项目与作品</a>
 </section><section class="page reading-page" id="project-experiment" data-motion="rise" data-page data-title="线上共创项目" hidden aria-labelledby="project-experiment-title">
-  <div class="page-heading"><p class="eyebrow">产品共创 / 体验设计 / AI 应用交付</p><h1 id="project-experiment-title" tabindex="-1">线上共创项目</h1><p class="page-description">和线上伙伴一起，把 AI 能力做成可以参与、持续交互的产品。从玩法与体验出发，深入模型分工、实时协作和效果评测。</p></div>
-  <div class="document-meta"><span>未明·海龟汤：多人协作推理</span><span>一炷：东方仪式与多轮解读</span></div>
-  <div class="prose">
-    <h2>未明·海龟汤 · AI 多人协作推理</h2>
-    <p>将依赖人工主持的海龟汤，转化为 AI 主持、好友连麦与线索协作结合的互动推理体验。玩家在同一房间中通过自然语言提问、递进提示、线索记录和推理提交，共同还原故事真相。产品围绕“如何让一场推理持续进行”组织玩法，降低组局对人工主持的依赖。</p>
-    <p><strong>玩法与产品设计：</strong>负责玩法及交互流程设计，衔接提问、获取提示、整理线索与提交推理，让不同阶段的操作有明确入口与反馈。围绕多人参与场景，参与私密邀请、公开分享与海报导出功能，明确加入凭据、房间权限和可公开的信息范围。</p>
-    <p><strong>AI 裁判与规则计分：</strong>参与设计“语义判断—证据校验—规则计分”的分工：模型识别玩家推理命中的线索，服务端核对证据片段是否真实来自提交文本，再依据题目版本和固定权重计算分数。将开放表达交给模型理解，将得分依据交给确定性规则约束，让判定过程更容易核对和排查。</p>
-    <p><strong>多人协作与异常恢复：</strong>参与房间、笔记、提示和语音模块整合及开发联调，通过 WebSocket 同步房间状态，通过 TRTC 支持实时连麦；围绕断线重连、重复请求、模型与语音异常完善恢复路径，关注多人看到的状态是否一致，以及中断后如何继续游戏。</p>
-    <p><strong>共创与交付：</strong>参与模块整合与交付统筹，开展 Web/H5 适配和本地流程验证，并参与服务部署与回滚方案设计。项目基于 MIT 许可的开源项目二次开发，采用 Vite、FastAPI、WebSocket 与 TRTC，覆盖从玩法设计到跨模块联调的产品实践。</p>
-    <h2>一炷 · 东方仪式与 AI 多轮解读</h2>
-    <p>以摇签、投筊和签文阅读为入口，将东方仪式体验与有依据的 AI 解读结合。用户带着具体问题进入，通过签文阅读、个性化解释和连续追问理解诗文、梳理现实困惑。产品的核心设计，是让仪式操作、内容依据与后续对话保持连贯。</p>
-    <p><strong>完整体验设计：</strong>负责产品体验设计与交互整合，贯通摇签、投筊、签文阅读和连续追问，保持签号、内容版本与会话状态一致；完善解读展示、追问状态提示及失败恢复入口，让用户在等待、补充问题或重新尝试时，清楚当前进度和下一步操作。</p>
-    <p><strong>有依据的解读流程：</strong>负责 Dify Chatflow 接入与接口联调，将 System Prompt、固定版本签文、RAG 补充检索和会话上下文组织到解读流程中。围绕当前签文与用户问题提供内容依据，并通过追问更正和检索异常用例，检查多轮交互中的理解偏差与无依据补充。</p>
-    <p><strong>检索质量与模型评测：</strong>参与 Qwen Embedding 与引入 Jina／Qwen Rerank 后的检索对比，用 Hit@1、Hit@3 和 MRR@3 检查目标签文能否被找到、能否排在前列；负责建设覆盖意图识别、解读、追问更正及检索异常的评测集，以 GSB 对比和分维度评分定位误拦、漏放、无依据补充与 JSON 格式错误。</p>
-    <p><strong>共创与迭代：</strong>基于 React／Vite 完成体验整合及工作流联调，比较模型的结构化输出、响应时延与调用成本，将具体 Bad Case 整理为选型与迭代依据。把体验设计、内容检索和模型评测连接起来，让产品迭代有可复查的问题与判断标准。</p>
-  </div><a class="text-link" href="#projects">← 全部项目与作品</a>
+<div class="page-heading"><p class="eyebrow">产品共创 / 体验设计 / AI 应用交付</p><h1 id="project-experiment-title" tabindex="-1">线上共创项目</h1><p class="page-description">和线上伙伴一起，把 AI 主持与多轮解读做成完整的互动体验。</p></div>
+<div class="case-collection-heading"><span>2 个共创项目</span><span>产品定位 · 关键设计 · 我的贡献</span></div>
+<div class="case-grid"><article class="case-card" aria-labelledby="project-experiment-case-0">
+<div class="case-card-top"><span class="case-number">01 / 互动推理</span><span class="case-status">Web / H5 流程验证</span></div>
+<header class="case-card-heading"><p class="case-brand">未明·海龟汤</p><h2 id="project-experiment-case-0">AI 多人协作推理</h2><p class="case-summary">AI 主持、好友连麦与线索协作结合，让玩家用自然语言共同还原故事真相。</p></header>
+<ol class="case-steps" aria-label="核心产品流程"><li>自然语言提问</li><li>线索协作</li><li>推理提交</li></ol>
+<div class="case-role"><span>我的角色</span><p>负责玩法与交互设计 · 参与裁判方案、模块整合及联调</p></div>
+
+<ul class="case-highlights"><li><h3>AI 与规则分工</h3><p>模型识别线索命中，服务端校验证据，再按固定权重计分。</p></li><li><h3>多人状态同步</h3><p>WebSocket 同步房间，TRTC 实时连麦，衔接邀请、笔记和提示。</p></li><li><h3>中断后的恢复</h3><p>覆盖断线重连、重复请求和模型异常，参与部署与回滚方案。</p></li></ul>
+<details class="case-details"><summary><span class="case-expand-label">展开项目细节</span><span class="case-collapse-label">收起项目细节</span><span class="case-detail-mark" aria-hidden="true"></span></summary><div class="case-detail-body"><div><h3>产品背景</h3><p>将依赖人工主持的海龟汤，转化为 AI 主持、好友连麦与线索协作结合的互动推理体验。玩家在同一房间中通过自然语言提问、递进提示、线索记录和推理提交，共同还原故事真相。产品围绕“如何让一场推理持续进行”组织玩法，降低组局对人工主持的依赖。</p></div><div><h3>玩法与产品设计</h3><p>负责玩法及交互流程设计，衔接提问、获取提示、整理线索与提交推理，让不同阶段的操作有明确入口与反馈。围绕多人参与场景，参与私密邀请、公开分享与海报导出功能，明确加入凭据、房间权限和可公开的信息范围。</p></div><div><h3>AI 裁判与规则计分</h3><p>参与设计“语义判断—证据校验—规则计分”的分工：模型识别玩家推理命中的线索，服务端核对证据片段是否真实来自提交文本，再依据题目版本和固定权重计算分数。将开放表达交给模型理解，将得分依据交给确定性规则约束，让判定过程更容易核对和排查。</p></div><div><h3>多人协作与异常恢复</h3><p>参与房间、笔记、提示和语音模块整合及开发联调，通过 WebSocket 同步房间状态，通过 TRTC 支持实时连麦；围绕断线重连、重复请求、模型与语音异常完善恢复路径，关注多人看到的状态是否一致，以及中断后如何继续游戏。</p></div><div><h3>共创与交付</h3><p>参与模块整合与交付统筹，开展 Web/H5 适配和本地流程验证，并参与服务部署与回滚方案设计。项目基于 MIT 许可的开源项目二次开发，采用 Vite、FastAPI、WebSocket 与 TRTC，覆盖从玩法设计到跨模块联调的产品实践。</p></div></div></details>
+</article>
+<article class="case-card" aria-labelledby="project-experiment-case-1">
+<div class="case-card-top"><span class="case-number">02 / 文化互动</span><span class="case-status">体验整合与评测实践</span></div>
+<header class="case-card-heading"><p class="case-brand">一炷</p><h2 id="project-experiment-case-1">东方仪式与 AI 多轮解读</h2><p class="case-summary">从摇签、投筊到签文阅读与连续追问，让仪式操作、内容依据和后续对话保持连贯。</p></header>
+<ol class="case-steps" aria-label="核心产品流程"><li>仪式体验</li><li>有据解读</li><li>连续追问</li></ol>
+<div class="case-role"><span>我的角色</span><p>负责体验设计、工作流接入与评测集建设</p></div>
+
+<ul class="case-highlights"><li><h3>完整体验与状态</h3><p>保持签号、内容版本和会话一致，补齐等待反馈与失败恢复。</p></li><li><h3>解读与检索连接</h3><p>Dify Chatflow 结合固定签文、RAG 补充检索与会话上下文。</p></li><li><h3>评测驱动迭代</h3><p>对比检索命中、排序、结构化输出、时延与成本，定位具体 Bad Case。</p></li></ul>
+<details class="case-details"><summary><span class="case-expand-label">展开项目细节</span><span class="case-collapse-label">收起项目细节</span><span class="case-detail-mark" aria-hidden="true"></span></summary><div class="case-detail-body"><div><h3>产品背景</h3><p>以摇签、投筊和签文阅读为入口，将东方仪式体验与有依据的 AI 解读结合。用户带着具体问题进入，通过签文阅读、个性化解释和连续追问理解诗文、梳理现实困惑。产品的核心设计，是让仪式操作、内容依据与后续对话保持连贯。</p></div><div><h3>完整体验设计</h3><p>负责产品体验设计与交互整合，贯通摇签、投筊、签文阅读和连续追问，保持签号、内容版本与会话状态一致；完善解读展示、追问状态提示及失败恢复入口，让用户在等待、补充问题或重新尝试时，清楚当前进度和下一步操作。</p></div><div><h3>有依据的解读流程</h3><p>负责 Dify Chatflow 接入与接口联调，将 System Prompt、固定版本签文、RAG 补充检索和会话上下文组织到解读流程中。围绕当前签文与用户问题提供内容依据，并通过追问更正和检索异常用例，检查多轮交互中的理解偏差与无依据补充。</p></div><div><h3>检索质量与模型评测</h3><p>参与 Qwen Embedding 与引入 Jina／Qwen Rerank 后的检索对比，用 Hit@1、Hit@3 和 MRR@3 检查目标签文能否被找到、能否排在前列；负责建设覆盖意图识别、解读、追问更正及检索异常的评测集，以 GSB 对比和分维度评分定位误拦、漏放、无依据补充与 JSON 格式错误。</p></div><div><h3>共创与迭代</h3><p>基于 React／Vite 完成体验整合及工作流联调，比较模型的结构化输出、响应时延与调用成本，将具体 Bad Case 整理为选型与迭代依据。把体验设计、内容检索和模型评测连接起来，让产品迭代有可复查的问题与判断标准。</p></div></div></details>
+</article></div><a class="text-link" href="#projects">← 全部项目与作品</a>
 </section><section class="page reading-page" id="writing" data-motion="stagger" data-page data-title="文字与思考" hidden aria-labelledby="writing-title">
 <div class="page-heading"><p class="eyebrow">产品观察 / 技术拆解 / 实践方法</p><h1 id="writing-title" tabindex="-1">文字与思考</h1><p class="page-description">从具体的问题出发，理解 AI 怎样进入真实工作。这里收录我写过的 14 篇文章，记录实践、研究和仍在追问的问题。</p></div>
 <div class="article-list"><a class="article-row" href="#article-qzone-archive"><div class="card-meta"><span>技术拆解</span><span>约 10 分钟</span></div><h2>删除多年的 QQ 空间说说和相册，为什么还有机会找回来</h2><div class="card-bottom"><span>删除不等于所有副本立即消失。沿互动记录、媒体文件与回收站，拆解归档能力及停止维护后的边界。</span><span class="article-read">阅读全文 →</span></div></a>
