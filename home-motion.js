@@ -199,6 +199,39 @@
     button.addEventListener('click', () => setGroupOpen(button.closest('.sidebar-group'), button.getAttribute('aria-expanded') !== 'true'));
   });
 
+  const projectTabs = [...document.querySelectorAll('[data-project-filter]')];
+  const projectGroups = [...document.querySelectorAll('[data-project-category]')];
+  const projectPanel = document.querySelector('#project-tab-panel');
+  function selectProjectTab(tab) {
+    const filter = tab.dataset.projectFilter;
+    projectTabs.forEach(item => {
+      const selected = item === tab;
+      item.setAttribute('aria-selected', String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
+    projectGroups.forEach(group => {
+      group.hidden = filter !== 'all' && group.dataset.projectCategory !== filter;
+    });
+    projectPanel.setAttribute('aria-labelledby', tab.id);
+    main.scrollTop = 0;
+    positions.set('project-tool', 0);
+    tab.scrollIntoView({block:'nearest', inline:'nearest'});
+  }
+  projectTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectProjectTab(tab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % projectTabs.length;
+      else if (event.key === 'ArrowLeft') next = (index - 1 + projectTabs.length) % projectTabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = projectTabs.length - 1;
+      else return;
+      event.preventDefault();
+      projectTabs[next].focus({preventScroll:true});
+      selectProjectTab(projectTabs[next]);
+    });
+  });
+
   function clearPageTransition() {
     for (const item of [animation, outgoingAnimation]) {
       if (item) { item.onfinish = item.oncancel = null; item.cancel(); }

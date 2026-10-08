@@ -84,3 +84,14 @@
 .open-source-footer{margin-top:32px;padding:18px 0}
 .open-source-footer p{font-size:14px;line-height:1.7;color:var(--muted);margin-bottom:8px}
 @media(max-width:760px){.open-source-group{margin-top:34px}.open-source-group-heading{gap:8px}.open-source-group-heading h2{font-size:17px}.open-project{padding-block:22px}.open-project-bottom{align-items:flex-start;flex-direction:column}}
+
+.project-tabs{display:flex;gap:4px;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;border-bottom:1px solid var(--line);margin-top:26px;padding:4px 2px 0}
+.project-tabs [role="tab"]{display:inline-flex;align-items:center;gap:7px;flex-shrink:0;white-space:nowrap;padding:11px 12px 12px;border:0;border-bottom:2px solid transparent;border-radius:8px 8px 0 0;background:transparent;font-size:13px;line-height:1.5;color:var(--muted)}
+.project-tabs [role="tab"]:hover{background:var(--hover);color:var(--ink)}
+.project-tabs [role="tab"][aria-selected="true"]{border-bottom-color:var(--ink);color:var(--ink);font-weight:600;background:var(--hover)}
+.project-tabs [role="tab"]:focus-visible{outline-offset:-3px}
+.project-tab-count{font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
+#project-tab-panel{min-width:0}
+#project-tab-panel>.open-source-group{margin-top:32px}
+#project-tab-panel>.open-source-group[hidden]{display:none}
+@media(max-width:760px){.project-tabs{margin-top:20px}.project-tabs [role="tab"]{padding-inline:10px}}
